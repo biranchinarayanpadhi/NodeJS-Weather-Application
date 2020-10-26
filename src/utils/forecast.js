@@ -14,8 +14,9 @@ const forecast = (latitude, longitude, callback) => {
         }
         else {
 
-            const {feelslike:currentTemperature, precip:chanceofRainFall,weather_descriptions:summary} = body.current
+            const {feelslike:currentTemperature, precip:chanceofRainFall,weather_descriptions:summary,humidity} = body.current
             callback(undefined, {
+                'humidity':humidity,
                 'summary':summary,
                 'temperature': currentTemperature,
                 'precipitation': chanceofRainFall,
